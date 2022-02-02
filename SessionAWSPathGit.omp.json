@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#9A348E",
+          "leading_diamond": "\uE0B6",
+          "trailing_diamond": "",
+          "properties": {
+            "prefix": "",
+            "template": "{{ .UserName }}"
+          }
+        },
+        {
+          "type": "aws",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#FFA400",
+          "properties": {
+            "prefix": " \uE7AD ",
+            "template": "{{if .Region}}{{.Region}}{{end}}"
+          }
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#DA627D",
+          "properties": {
+            "home_icon": "💀",
+            "enable_hyperlink": false,
+            "style": "mixed",
+            "mixed_threshold" : 4,
+            "mapped_locations": {
+              "C:\\Repos": "\uF09B ",
+              "C:\\Users\\JakeMundy\\OneDrive - Greystone Consulting Ltd": "\uF8C9 "
+            }
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#FCA17D",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true,
+            "branch_icon": "",
+            "fetch_status": false,
+            "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }}",
+            "prefix": " \u279C (",
+            "postfix": ") "
+          }
+        }
+      ]
+    }
+  ]
+}
